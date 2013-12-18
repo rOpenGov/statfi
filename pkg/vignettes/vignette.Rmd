@@ -59,8 +59,8 @@ datasets.statfi <- list_statfi_files()
 # List the open data files available from Eurostat
 datasets.eurostat <- list_eurostat_files()
 
-# Investigate the first entry
-print(datasets[1,])
+# Investigate the first entry in StatFi data
+print(datasets.statfi[1,])
 
 # EuroStat data files, descriptions of the first entries
 head(datasets.eurostat$DESCRIPTION)
@@ -71,7 +71,7 @@ head(datasets.eurostat$DESCRIPTION)
 ```{r tilastokeskus-2, warning=FALSE, message=FALSE}
 library(statfi)
 
-# Define URL
+# Define URL (see datasets.statfi)
 url <- "http://pxweb2.stat.fi/Database/StatFin/tul/tvt/2009/120_tvt_2009_2011-02-18_tau_112_fi.px"
 
 # Get the data
@@ -79,11 +79,13 @@ df <- get_statfi(url)
 head(df)
 ```
 
-### Visualization of PC Axis data
+### Visualizing PC Axis data
 
 See also the example in [Louhos blog](https://louhos.wordpress.com/2011/10/19/tilastokeskuksen-pc-axis-muotoisten-aineistojen-visualisointi-suomen-kartalla/). 
 
 ```{r tilastokeskus-3, warning=FALSE, message=FALSE}
+library(sorvi)
+
 # Get Finnish municipality borders (C) Maanmittauslaitos 2011
 # http://www.maanmittauslaitos.fi/aineistot-palvelut/digitaaliset-tuotteet/ilmaiset-aineistot/hankinta
 sp <- LoadMML(data.id = "kunta1_p", resolution = "1_milj_Shape_etrs_shape") 
@@ -119,7 +121,7 @@ This work can be freely used, modified and distributed under the
 license](http://en.wikipedia.org/wiki/BSD\_licenses). Kindly cite the
 R package as 'Leo Lahti, Juuso Parkkinen ja Joona Lehtomäki
 (2010-2013). statfi R package. URL:
-http://ropengov.github.io/statfi)'.
+http://ropengov.github.io/statfi'.
 
 
 ### Session info
