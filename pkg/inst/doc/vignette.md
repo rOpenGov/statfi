@@ -64,12 +64,21 @@ datasets.statfi <- list_statfi_files()
 # List the open data files available from Eurostat
 datasets.eurostat <- list_eurostat_files()
 
-# Investigate the first entry
-print(datasets[1, ])
+# Investigate the first entry in StatFi data
+print(datasets.statfi[1, ])
 ```
 
 ```
-## Error: object 'datasets' not found
+##                                                                  File
+## 1 http://pxweb2.stat.fi/database/StatFin/asu/asas/010_asas_tau_101.px
+##      size          created          updated variables
+## 1 1230604 2012-02-13 11:27 2013-05-22 07:10         4
+##                  tablesize     type LANGUAGE
+## 1 (321x8x5) x 28 = 359520  Maksuton       fi
+##                                                                  TITLE
+## 1 Asuntokunnat muuttujina Alue, Asuntokunnan koko, Talotyyppi ja Vuosi
+##                                                DESCRIPTION
+## 1 Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012
 ```
 
 ```r
@@ -94,7 +103,7 @@ head(datasets.eurostat$DESCRIPTION)
 ```r
 library(statfi)
 
-# Define URL
+# Define URL (see datasets.statfi)
 url <- "http://pxweb2.stat.fi/Database/StatFin/tul/tvt/2009/120_tvt_2009_2011-02-18_tau_112_fi.px"
 
 # Get the data
@@ -120,19 +129,21 @@ head(df)
 ```
 
 
-### Visualization of PC Axis data
+### Visualizing PC Axis data
 
 See also the example in [Louhos blog](https://louhos.wordpress.com/2011/10/19/tilastokeskuksen-pc-axis-muotoisten-aineistojen-visualisointi-suomen-kartalla/). 
 
 
 ```r
+library(sorvi)
+
 # Get Finnish municipality borders (C) Maanmittauslaitos 2011
 # http://www.maanmittauslaitos.fi/aineistot-palvelut/digitaaliset-tuotteet/ilmaiset-aineistot/hankinta
 sp <- LoadMML(data.id = "kunta1_p", resolution = "1_milj_Shape_etrs_shape")
 ```
 
 ```
-## Error: could not find function "LoadMML"
+## Error: unused argument (resolution = "1_milj_Shape_etrs_shape")
 ```
 
 ```r
@@ -175,7 +186,7 @@ q <- PlotShape(sp, varname, type = "oneway", main = "Median income", at = seq(-1
 ```
 
 ```
-## Error: could not find function "PlotShape"
+## Error: object 'sp' not found
 ```
 
 
@@ -194,7 +205,7 @@ This work can be freely used, modified and distributed under the
 license](http://en.wikipedia.org/wiki/BSD\_licenses). Kindly cite the
 R package as 'Leo Lahti, Juuso Parkkinen ja Joona Lehtomäki
 (2010-2013). statfi R package. URL:
-http://ropengov.github.io/statfi)'.
+http://ropengov.github.io/statfi'.
 
 
 ### Session info
@@ -220,12 +231,20 @@ sessionInfo()
 ## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## [1] splines   grid      stats     graphics  grDevices utils     datasets 
+## [8] methods   base     
 ## 
 ## other attached packages:
-## [1] statfi_0.9.01 pxR_0.29      stringr_0.6.2 knitr_1.2    
+##  [1] RColorBrewer_1.0-5 sorvi_0.4.14       spdep_0.5-56      
+##  [4] coda_0.16-1        deldir_0.0-22      maptools_0.8-23   
+##  [7] foreign_0.8-54     nlme_3.1-109       MASS_7.3-26       
+## [10] Matrix_1.0-12      lattice_0.20-15    boot_1.3-9        
+## [13] sp_1.0-9           rjson_0.2.12       RCurl_1.95-4.1    
+## [16] bitops_1.0-5       statfi_0.9.01      pxR_0.29          
+## [19] stringr_0.6.2      knitr_1.2         
 ## 
 ## loaded via a namespace (and not attached):
-## [1] digest_0.6.3   evaluate_0.4.3 formatR_0.7    tools_3.0.1
+## [1] digest_0.6.3    evaluate_0.4.3  formatR_0.7     LearnBayes_2.12
+## [5] tools_3.0.1
 ```
 
