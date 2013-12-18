@@ -55,25 +55,14 @@ You can download these listings in R as follows:
 
 
 ```r
+# Load the library
+library(statfi)
+
 # List the open data files available from Statistics Finland
 datasets.statfi <- list_statfi_files()
-```
-
-```
-## Error: could not find function "list_statfi_files"
-```
-
-```r
 
 # List the open data files available from Eurostat
 datasets.eurostat <- list_eurostat_files()
-```
-
-```
-## Error: could not find function "list_eurostat_files"
-```
-
-```r
 
 # Investigate the first entry
 print(datasets[1, ])
@@ -90,7 +79,12 @@ head(datasets.eurostat$DESCRIPTION)
 ```
 
 ```
-## Error: object 'datasets.eurostat' not found
+## [1] "Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012"                                 
+## [2] "Asuntokunnat ja asuntoväestö asuntokunnan koon, huoneluvun ja talotyypin mukaan 2005-2012"
+## [3] "Asuntokunnat ja asuntoväestö asumisväljyyden mukaan 1989-2012"                            
+## [4] "Asuntokunnat koon, vanhimman iän ja sukupuolen sekä talotyypin mukaan 2005-2012"          
+## [5] "Asuntokunnat ja asuntoväestö asuntokunnan koon ja hallintaperusteen mukaan 2005-2012"     
+## [6] "Asunnot (lkm) talotyypin, käytössäolon ja rakennusvuoden mukaan 31.12.2012"
 ```
 
 

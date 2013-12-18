@@ -50,6 +50,9 @@ available for browsing:
 You can download these listings in R as follows:
 
 ```{r tilastokeskus-1, warning=FALSE, message=FALSE}
+# Load the library
+library(statfi)
+
 # List the open data files available from Statistics Finland
 datasets.statfi <- list_statfi_files()
 
