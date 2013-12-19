@@ -1,4 +1,4 @@
-# This file is a part of rOpenGov (http://ropengov.github.com/statfi/)
+# This file is a part of rOpenGov (http://ropengov.github.com/)
 
 # Copyright (C) 2010-2013 Leo Lahti, Juuso Parkkinen, Joona Lehtomaki 
 # <louhos.github.com>. All rights reserved.
