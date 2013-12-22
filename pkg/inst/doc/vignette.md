@@ -6,13 +6,18 @@
 Statistics Finland (Tilastokeskus) R tools
 ===========
 
-This is the rOpenGov [statfi](http://ropengov.github.com/statfi) R
-package to access data from [Statistics
-Finland](http://www.stat.fi/org/lainsaadanto/avoin_data.html) and
-[Eurostat]().
+This [statfi](http://ropengov.github.com/statfi) R package to access
+open data from [Statistics
+Finland](http://www.stat.fi/tup/tilastotietokannat/index_fi.html). 
 
+The available data sets include about 3000 data sets from [Statistics
+Finland](http://www.stat.fi/org/lainsaadanto/avoin_data.html),
+[Eurostat](http://pxweb2.stat.fi/Database/Eurostat/databasetree_fi.asp),
+and other [international
+statistics](http://pxweb2.stat.fi/Database/Kansainvalisen_tiedon_tietokanta/databasetree_fi.asp)). The
+package is part of the [rOpenGov](http://ropengov.github.io) project.
 
-### Installation
+## Installation
 
 Release version for general users:
 
@@ -34,22 +39,22 @@ library(statfi)
 ```
 
 
-Further installation and development instructions at the [home
-page](http://ropengov.github.com/statfi). For further usage examples,
-see [Louhos-blog](http://louhos.wordpress.com) and
-[Datawiki](https://github.com/ropengov/statfi/wiki/Data), and
-[takomo](https://github.com/louhos/takomo/tree/master/StatFi).
+For further installation and development instructions, see the [home
+page](http://ropengov.github.com/statfi).
 
 
-### Statistics Finland and Eurostat open data listing
+## Listing of available data sets (Statistics Finland, Eurostat, International)
 
-The listing of [open data sets from Statistics Finland (StatFi) and
-Eurostat](http://www.stat.fi/org/lainsaadanto/avoin_data.html) are
-available for browsing:
+The listings of [open data sets from Statistics Finland (StatFi),
+Eurostat and International
+statistics](http://www.stat.fi/org/lainsaadanto/avoin_data.html) are
+available for browsing in PCAxis, CSV and XML format:
 
- * [StatFi (CSV)](http://pxweb2.stat.fi/database/StatFin/StatFin_rap_csv.csv)
- * [StatFi (XML)](http://pxweb2.stat.fi/database/StatFin/StatFin_rap_xml.csv)
- * [Eurostat](http://pxweb2.stat.fi/database/StatFin/StatFin_rap.csv)
+ * StatFi [PCAxis](http://pxweb2.stat.fi/database/StatFin/databasetree_fi.asp) [CSV](http://pxweb2.stat.fi/database/StatFin/StatFin_rap_csv.csv) [XML](http://pxweb2.stat.fi/database/StatFin/StatFin_rap_xml.csv)
+
+ * Eurostat [PCAxis](http://pxweb2.stat.fi/Database/Eurostat/databasetree_fi.asp) [CSV](http://pxweb2.stat.fi/database/StatFin/StatFin_rap.csv)
+
+ * International statistics [PC Axis](http://pxweb2.stat.fi/Database/Kansainvalisen_tiedon_tietokanta/databasetree_fi.asp)
 
 You can download these listings in R as follows:
 
@@ -58,10 +63,10 @@ You can download these listings in R as follows:
 # Load the library
 library(statfi)
 
-# List the open data files available from Statistics Finland
+# List open data files available from Statistics Finland
 datasets.statfi <- list_statfi_files()
 
-# List the open data files available from Eurostat
+# List open data files available from Eurostat
 datasets.eurostat <- list_eurostat_files()
 
 # Investigate the first entry in StatFi data
@@ -83,8 +88,8 @@ print(datasets.statfi[1, ])
 
 ```r
 
-# EuroStat data files, descriptions of the first entries
-head(datasets.eurostat$DESCRIPTION)
+# Descriptions of the first entries
+head(datasets.statfi$DESCRIPTION)
 ```
 
 ```
@@ -97,106 +102,45 @@ head(datasets.eurostat$DESCRIPTION)
 ```
 
 
-### Median incomes in Finnish municipalities
+## Retrieving the data
+
+This example illustrates how to retrieve data from the StatFi
+databases by defining the URL of the data set. For the listing of
+available files and URLs, see above.
 
 
 ```r
 library(statfi)
 
-# Define URL (see datasets.statfi)
+# Define URL (see list_statfi_files() for listing of available files)
 url <- "http://pxweb2.stat.fi/Database/StatFin/tul/tvt/2009/120_tvt_2009_2011-02-18_tau_112_fi.px"
 
 # Get the data
 df <- get_statfi(url)
-head(df)
+df[1:3, ]
 ```
 
 ```
-##                                                           Tiedot    Kunta
-## 1                                                    Tulonsaajia Koko maa
-## 2                                 Veronalaiset tulot keskimäärin Koko maa
-## 3                                   Veronalaiset tulot, mediaani Koko maa
-## 4 Veronalaiset tulot ml. verovapaat osingot ja korot keskimäärin Koko maa
-## 5   Veronalaiset tulot ml. verovapaat osingot ja korot, mediaani Koko maa
-## 6                                         Ansiotulot keskimäärin Koko maa
-##   Vuosi     dat
-## 1  2005 4314900
-## 2  2005   21695
-## 3  2005   17793
-## 4  2005   22110
-## 5  2005   17910
-## 6  2005   20375
+##                           Tiedot    Kunta Vuosi     dat
+## 1                    Tulonsaajia Koko maa  2005 4314900
+## 2 Veronalaiset tulot keskimäärin Koko maa  2005   21695
+## 3   Veronalaiset tulot, mediaani Koko maa  2005   17793
 ```
 
 
-### Visualizing PC Axis data
-
-See also the example in [Louhos blog](https://louhos.wordpress.com/2011/10/19/tilastokeskuksen-pc-axis-muotoisten-aineistojen-visualisointi-suomen-kartalla/). 
-
-
-```r
-library(sorvi)
-
-# Get Finnish municipality borders (C) Maanmittauslaitos 2011
-# http://www.maanmittauslaitos.fi/aineistot-palvelut/digitaaliset-tuotteet/ilmaiset-aineistot/hankinta
-sp <- LoadMML(data.id = "kunta1_p", resolution = "1_milj_Shape_etrs_shape")
-```
-
-```
-## Error: unused argument (resolution = "1_milj_Shape_etrs_shape")
-```
-
-```r
-
-# Pick information from statfi data
-mediaanitulo <- subset(df, Tiedot == "Veronalaiset tulot, mediaani" & Vuosi == 
-    2009)
-
-# Lisaa tiedot karttaobjektiin
-sp@data$mediaanitulo <- mediaanitulo$dat[match(sp$Kunta.FI, mediaanitulo$Kunta)]
-```
-
-```
-## Error: object 'sp' not found
-```
-
-```r
-# Korvaa puuttuvat arvot nollalla
-sp[["mediaanitulo"]][is.na(sp[["mediaanitulo"]])] <- 0
-```
-
-```
-## Error: object 'sp' not found
-```
-
-```r
-
-# Visualize
-varname <- "mediaanitulo"
-int <- max(abs(sp[[varname]]))
-```
-
-```
-## Error: object 'sp' not found
-```
-
-```r
-q <- PlotShape(sp, varname, type = "oneway", main = "Median income", at = seq(-1, 
-    int, length = 11))
-```
-
-```
-## Error: object 'sp' not found
-```
+For further usage examples, see
+[Louhos-blog](http://louhos.wordpress.com) and
+[Datawiki](https://github.com/ropengov/statfi/wiki/Data).
 
 
-
-# Licensing and Citations
+## Licensing and Citations
 
 ### Statistics Finland data
 
 Cite Statfi and link to
-[http://www.statfi.fi](http://www.statfi.fi/).
+[http://www.statfi.fi](http://www.statfi.fi/). We are grateful to
+Statistics Finland open data personnell for their generous support
+during the development of this package.
 
 ### statfi R package
 
@@ -231,20 +175,12 @@ sessionInfo()
 ## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] splines   grid      stats     graphics  grDevices utils     datasets 
-## [8] methods   base     
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] RColorBrewer_1.0-5 sorvi_0.4.14       spdep_0.5-56      
-##  [4] coda_0.16-1        deldir_0.0-22      maptools_0.8-23   
-##  [7] foreign_0.8-54     nlme_3.1-109       MASS_7.3-26       
-## [10] Matrix_1.0-12      lattice_0.20-15    boot_1.3-9        
-## [13] sp_1.0-9           rjson_0.2.12       RCurl_1.95-4.1    
-## [16] bitops_1.0-5       statfi_0.9.01      pxR_0.29          
-## [19] stringr_0.6.2      knitr_1.2         
+## [1] knitr_1.2     statfi_0.9.01 pxR_0.29      stringr_0.6.2
 ## 
 ## loaded via a namespace (and not attached):
-## [1] digest_0.6.3    evaluate_0.4.3  formatR_0.7     LearnBayes_2.12
-## [5] tools_3.0.1
+## [1] digest_0.6.3   evaluate_0.4.3 formatR_0.7    tools_3.0.1
 ```
 
