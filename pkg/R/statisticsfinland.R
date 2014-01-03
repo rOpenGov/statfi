@@ -131,21 +131,20 @@ get_statfi <- function (url, format = "px", verbose = TRUE) {
       df <- as.data.frame(px) 
     }
 
-  } else if (format %in% c("csv", "xml")) {
+  } else if (format == "xml") {
 
-    if (format == "xml") {warning("xml not yet implemented for statfi; using csv instead")}
+    warning("xml not yet implemented for statfi; using csv instead")
 
     url <- gsub("\\.px", "\\.csv", url)
     url <- gsub("\\.xml", "\\.csv", url)
-
     df <- read.csv(url, encoding = "latin1", as.is = T, colClasses = 'character', sep = ";"); 
 
-  } else if (format == "xml") {
+  } else if (format == "csv") {
 
     # TODO
-    # url <- gsub("\\.px", "\\.xml", url)
-    # url <- gsub("\\.csv", "\\.xml", url)
-    # df <- read.csv(url, encoding = "latin1", as.is = T, colClasses = 'character', sep = ";"); 
+    url <- gsub("\\.px", "\\.csv", url)
+    url <- gsub("\\.xml", "\\.csv", url)
+    df <- read.csv(url, encoding = "latin1", as.is = T, colClasses = 'character', sep = ";"); 
 
   }
 
