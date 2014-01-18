@@ -1,6 +1,12 @@
-# History files
-.Rhistory
-
-# Example code in package build process
-*-Ex.R
+*Rcheck*
+inst/extras
+inst/extras/..Rcheck
+inst/extras/..Rcheck
 *~
+*/~
+vignettes/*_tutorial.md
+vignettes/figure
+vignettes/*~
+
+
+
