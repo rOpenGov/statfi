@@ -12,7 +12,7 @@ Depends:
     methods,
     pxR
 URL: http://ropengov.github.com/statfi
-CRAN: http://ropengov.github.com/statfiTODO
+URL.CRAN: http://ropengov.github.com/statfiTODO
 LazyLoad: yes
 Collate:
     'firstlib.R'
