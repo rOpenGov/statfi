@@ -34,6 +34,5 @@ This R package is part of the [rOpenGov](http://ropengov.github.io) project.
   * [follow us in social media](http://louhos.github.com/contact.html)  
 
   
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/fdfcd0ee746a540299b8f7be2833b93f "githalytics.com")](http://githalytics.com/ropengov/statfi)
-
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/d1e28e966fd1ba6169a627f7344e25db "githalytics.com")](http://githalytics.com/rOpenGov/statfi)
 
