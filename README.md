@@ -1,6 +1,7 @@
 statfi
 ======
 
+
 R tools for Statistics Finland and Eurostat data
 
 [![Build Status](https://api.travis-ci.org/rOpenGov/sorvi.png)](https://travis-ci.org/rOpenGov/sorvi)
@@ -12,10 +13,12 @@ R tools for Statistics Finland and Eurostat data
 
 ### Overview
 
-  [statfi](http://ropengov.github.com/statfi) R package provides tools
-  to access open data from [Statistics Finland
-  (Tilastokeskus)}(http://www.stat.fi/tup/tilastotietokannat/index_fi.html)
-  and Eurostat.
+This [rOpenGov](http://ropengov.github.io) R package provides tools
+to access open data from [Statistics Finland
+(Tilastokeskus)](http://www.stat.fi/tup/tilastotietokannat/index_fi.html)
+and Eurostat.
+
+For installation and usage instructions
 
 ### Contact
   
@@ -26,11 +29,6 @@ R tools for Statistics Finland and Eurostat data
   * compose a friendly e-mail to: louhos@googlegroups.com
   * join IRC at !louhos@IRCnet (Finland) and ropengov@Freenode (international)
   * [follow us in social media](http://louhos.github.com/contact.html)  
-
-### Developers
-
-  Current main developers are Leo Lahti, Juuso Parkkinen and Joona
-  Lehtomäki.  
 
   
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/fdfcd0ee746a540299b8f7be2833b93f "githalytics.com")](http://githalytics.com/ropengov/statfi)
