@@ -1,7 +1,7 @@
 # This file is a part of rOpenGov (http://ropengov.github.com/)
 
-# Copyright (C) 2010-2013 Leo Lahti, Juuso Parkkinen, Joona Lehtomaki 
-# <louhos.github.com>. All rights reserved.
+# Copyright (C) 2010-2014 Leo Lahti, Juuso Parkkinen, Joona Lehtomaki 
+# <ropengov.github.com>. All rights reserved.
 
 # This program is open source software; you can redistribute it and/or modify 
 # it under the terms of the FreeBSD License (keep this notice): 

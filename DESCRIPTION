@@ -1,8 +1,8 @@
 Package: statfi
 Type: Package
 Title: statfi R tools
-Version: 0.9.01
-Date: 2013-12-17
+Version: 0.9.02
+Date: 2013-04-19
 Author: Leo Lahti, Juuso Parkkinen, Joona Lehtomaki
 Maintainer: Leo Lahti <louhos@googlegroups.com>
 Description: Statistics Finland (Tilastokeskus) Open Data R Tools
@@ -11,8 +11,7 @@ Depends:
     R (>= 3.0.1),
     methods,
     pxR
-URL: http://ropengov.github.com/statfi
-URL.CRAN: http://ropengov.github.com/statfiTODO
+URL: https://github.com/rOpenGov/statfi
 LazyLoad: yes
 Collate:
     'firstlib.R'

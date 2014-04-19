@@ -1,0 +1,37 @@
+
+### Tilastokeskuksen PC Axis-muotoisten tiedostojen visualisointi
+
+Katso myös [Louhos-blogin](https://louhos.wordpress.com/2011/10/19/tilastokeskuksen-pc-axis-muotoisten-aineistojen-visualisointi-suomen-kartalla/) esimerkki.
+
+```{r tilastokeskus-3, warning=FALSE, message=FALSE}
+# Lue Suomen kuntarajat SpatialPolygon-muodossa
+# (C) Maanmittauslaitos 2011
+# http://www.maanmittauslaitos.fi/aineistot-palvelut/digitaaliset-tuotteet/ilmaiset-aineistot/hankinta
+sp <- LoadMML(data.id = "kunta1_p", resolution = "1_milj_Shape_etrs_shape") 
+
+# Kuntatason vaestonkasvutiedot tilastokeskuksen StatFin-tietokannasta
+# http://www.stat.fi/tup/statfin/index.html
+# df <- get_statfi("http://pxweb2.stat.fi/database/StatFin/vrm/muutl/080_muutl_tau_203.px")
+
+# Lue tiedot kuntien mediaanituloista tilastokeskuksen StatFin-tietokannasta
+# http://www.stat.fi/tup/statfin/index.html
+# Hae tiedot
+df <- get_statfi("http://pxweb2.stat.fi/Database/StatFin/tul/tvt/2009/120_tvt_2009_2011-02-18_tau_112_fi.px")
+
+# Poimi taulukosta halutut tiedot
+mediaanitulo <- subset(df, Tiedot == "Veronalaiset tulot, mediaani" & Vuosi == 2009)
+
+# Lisaa tiedot karttaobjektiin
+sp@data$mediaanitulo <- mediaanitulo$dat[match(sp$Kunta.FI, mediaanitulo$Kunta)]
+# Korvaa puuttuvat arvot nollalla
+sp[["mediaanitulo"]][is.na(sp[["mediaanitulo"]])] <- 0
+
+# Piirra kuva
+varname <- "mediaanitulo"
+int <- max(abs(sp[[varname]]))
+q <- PlotShape(sp, varname, type = "oneway",
+main = "Kuntien mediaanitulot",
+at = seq(-1, int, length = 11))
+```
+
+

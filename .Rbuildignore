@@ -4,6 +4,7 @@
 ./inst/extras/...Rcheck/*
 ./inst/extras/*
 ./inst/extras/.*
+./inst/extras/*.Rmd
 inst/extras/.RData
 
 
