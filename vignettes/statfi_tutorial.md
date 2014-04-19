@@ -6,16 +6,14 @@
 Statistics Finland (Tilastokeskus) R tools
 ===========
 
-This [statfi](http://ropengov.github.com/statfi) R package to access
-open data from [Statistics
-Finland](http://www.stat.fi/tup/tilastotietokannat/index_fi.html). 
-
-The available data sets include about 3000 data sets from [Statistics
+This R package provides tools to access open data from [Statistics
+Finland](http://www.stat.fi/tup/tilastotietokannat/index_fi.html),
+including about 3000 data sets from [Statistics
 Finland](http://www.stat.fi/org/lainsaadanto/avoin_data.html),
 [Eurostat](http://pxweb2.stat.fi/Database/Eurostat/databasetree_fi.asp),
 and other [international
-statistics](http://pxweb2.stat.fi/Database/Kansainvalisen_tiedon_tietokanta/databasetree_fi.asp)). The
-package is part of the [rOpenGov](http://ropengov.github.io) project.
+statistics](http://pxweb2.stat.fi/Database/Kansainvalisen_tiedon_tietokanta/databasetree_fi.asp)). This R package is part of the [rOpenGov](http://ropengov.github.io)
+project.
 
 The listings of [Statistics Finland (StatFi), Eurostat and
 International
@@ -131,14 +129,15 @@ df[1:3, ]
 
 ## Licensing and Citations
 
-### Statistics Finland data
+### Citing the Data
 
 Regarding the data, kindly cite Statfi with a link to
-[http://www.statfi.fi](http://www.statfi.fi/). We are grateful to
-Statistics Finland open data personnell for their support during the R
-package development.
+[http://www.statfi.fi](http://www.statfi.fi/) and/or
+[Eurostat](http://epp.eurostat.ec.europa.eu/portal/page/portal/statistics/search_database)
+accordingly. We are grateful to Statistics Finland open data
+personnell for their support during the R package development.
 
-### statfi R package
+### Citing the R tools
 
 This work can be freely used, modified and distributed under the
 [Two-clause FreeBSD
@@ -149,7 +148,7 @@ R package as 'Leo Lahti, Juuso Parkkinen ja Joona Lehtomäki (C)
 
 ### Session info
 
-This vignette was created with
+This tutorial was created with
 
 
 ```r

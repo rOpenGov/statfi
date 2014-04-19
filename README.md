@@ -13,12 +13,15 @@ R tools for Statistics Finland and Eurostat data
 
 ### Overview
 
-This [rOpenGov](http://ropengov.github.io) R package provides tools
-to access open data from [Statistics Finland
+This R package provides tools to access open data from [Statistics
+Finland
 (Tilastokeskus)](http://www.stat.fi/tup/tilastotietokannat/index_fi.html)
 and Eurostat.
 
-For installation and usage instructions
+For installation and usage, check the [tutorial
+page](https://github.com/rOpenGov/statfi/blob/master/vignettes/statfi_tutorial.md).  
+
+This R package is part of the [rOpenGov](http://ropengov.github.io) project.
 
 ### Contact
   
