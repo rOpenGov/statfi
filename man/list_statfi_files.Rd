@@ -2,7 +2,7 @@
 \alias{list_statfi_files}
 \title{List the open data files available from Statistics Finland}
 \usage{
-  list_statfi_files(format = "px")
+list_statfi_files(format = "px")
 }
 \arguments{
   \item{format}{"px", "csv", "xml" depending on the desired
@@ -11,19 +11,19 @@
   Returns:}
 }
 \value{
-  table
+table
 }
 \description{
-  Arguments:
+Arguments:
 }
 \examples{
 # df <- list_statfi_files()
 }
 \author{
-  Leo Lahti \email{louhos@googlegroups.com}
+Leo Lahti \email{louhos@googlegroups.com}
 }
 \references{
-  See citation("statfi")
+See citation("statfi")
 }
 \keyword{utilities}
 

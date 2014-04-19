@@ -2,7 +2,7 @@
 \alias{list_eurostat_files}
 \title{List the open data files available from Eurostat}
 \usage{
-  list_eurostat_files(...)
+list_eurostat_files(...)
 }
 \arguments{
   \item{...}{Arguments to be passed
@@ -10,19 +10,19 @@
   Returns:}
 }
 \value{
-  table
+table
 }
 \description{
-  Arguments:
+Arguments:
 }
 \examples{
 # df <- list_eurostat_files()
 }
 \author{
-  Leo Lahti \email{louhos@googlegroups.com}
+Leo Lahti \email{louhos@googlegroups.com}
 }
 \references{
-  See citation("statfi")
+See citation("statfi")
 }
 \keyword{utilities}
 

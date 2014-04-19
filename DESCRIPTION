@@ -13,9 +13,3 @@ Depends:
     pxR
 URL: https://github.com/rOpenGov/statfi
 LazyLoad: yes
-Collate:
-    'firstlib.R'
-    'statfi-package.R'
-    'statisticsfinland.R'
-    'px.R'
-    'utilities.R'
