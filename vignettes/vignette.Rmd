@@ -19,14 +19,14 @@ package is part of the [rOpenGov](http://ropengov.github.io) project.
 
 ## Installation
 
-Release version for general users:
+Release version for general use:
 
 ```{r install, eval=FALSE}
 install.packages("statfi")
 library(statfi)
 ```
 
-Development version for developers:
+Development version (potentially unstable):
 
 ```{r install2, eval=FALSE}
 install.packages("devtools")
@@ -34,9 +34,6 @@ library(devtools)
 install_github("statfi", "ropengov")
 library(statfi)
 ```
-
-For further installation and development instructions, see the [home
-page](http://ropengov.github.com/statfi).
 
 
 ## Listing of available data sets (Statistics Finland, Eurostat, International)

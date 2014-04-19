@@ -65,30 +65,25 @@ library(statfi)
 
 # List open data files available from Statistics Finland
 datasets.statfi <- list_statfi_files()
-```
-
-```
-## Error: cannot open the connection
-```
-
-```r
 
 # List open data files available from Eurostat
 datasets.eurostat <- list_eurostat_files()
-```
-
-```
-## Error: cannot open the connection
-```
-
-```r
 
 # Investigate the first entry in StatFi data
 print(datasets.statfi[1, ])
 ```
 
 ```
-## Error: object 'datasets.statfi' not found
+##                                                                  File
+## 1 http://pxweb2.stat.fi/database/StatFin/asu/asas/010_asas_tau_101.px
+##      size          created          updated variables
+## 1 1230502 2012-02-13 12:27 2013-05-22 08:10         4
+##                  tablesize     type LANGUAGE
+## 1 (321x8x5) x 28 = 359520  Maksuton       fi
+##                                                                  TITLE
+## 1 Asuntokunnat muuttujina Alue, Asuntokunnan koko, Talotyyppi ja Vuosi
+##                                                DESCRIPTION
+## 1 Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012
 ```
 
 ```r
@@ -98,7 +93,12 @@ head(datasets.statfi$DESCRIPTION)
 ```
 
 ```
-## Error: object 'datasets.statfi' not found
+## [1] "Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012"                                 
+## [2] "Asuntokunnat ja asuntoväestö asuntokunnan koon, huoneluvun ja talotyypin mukaan 2005-2012"
+## [3] "Asuntokunnat ja asuntoväestö asumisväljyyden mukaan 1989-2012"                            
+## [4] "Asuntokunnat koon, vanhimman iän ja sukupuolen sekä talotyypin mukaan 2005-2012"          
+## [5] "Asuntokunnat ja asuntoväestö asuntokunnan koon ja hallintaperusteen mukaan 2005-2012"     
+## [6] "Asunnot (lkm) talotyypin, käytössäolon ja rakennusvuoden mukaan 31.12.2012"
 ```
 
 
@@ -117,18 +117,14 @@ url <- "http://pxweb2.stat.fi/Database/StatFin/tul/tvt/2009/120_tvt_2009_2011-02
 
 # Get the data
 df <- get_statfi(url)
-```
-
-```
-## Error: cannot open the connection
-```
-
-```r
 df[1:3, ]
 ```
 
 ```
-## Error: object of type 'closure' is not subsettable
+##                           Tiedot    Kunta Vuosi     dat
+## 1                    Tulonsaajia Koko maa  2005 4314900
+## 2 Veronalaiset tulot keskimäärin Koko maa  2005   21695
+## 3   Veronalaiset tulot, mediaani Koko maa  2005   17793
 ```
 
 
@@ -167,14 +163,14 @@ sessionInfo()
 ```
 
 ```
-## R version 3.0.1 (2013-05-16)
-## Platform: x86_64-unknown-linux-gnu (64-bit)
+## R version 3.0.2 (2013-09-25)
+## Platform: x86_64-pc-linux-gnu (64-bit)
 ## 
 ## locale:
 ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
 ##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
 ##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=C                 LC_NAME=C                 
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
 ##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 ## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
@@ -182,9 +178,9 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] statfi_0.9.01 pxR_0.29      stringr_0.6.2 knitr_1.2    
+## [1] statfi_0.9.01 pxR_0.29      stringr_0.6.2 knitr_1.5    
 ## 
 ## loaded via a namespace (and not attached):
-## [1] digest_0.6.3   evaluate_0.4.3 formatR_0.7    tools_3.0.1
+## [1] evaluate_0.5.1 formatR_0.10   tools_3.0.2
 ```
 
