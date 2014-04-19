@@ -17,9 +17,19 @@ and other [international
 statistics](http://pxweb2.stat.fi/Database/Kansainvalisen_tiedon_tietokanta/databasetree_fi.asp)). The
 package is part of the [rOpenGov](http://ropengov.github.io) project.
 
+The listings of [Statistics Finland (StatFi), Eurostat and
+International
+statistics](http://www.stat.fi/org/lainsaadanto/avoin_data.html) are
+available for browsing in PCAxis, CSV and XML format:
+
+ * StatFi [PCAxis](http://pxweb2.stat.fi/database/StatFin/databasetree_fi.asp) [CSV](http://pxweb2.stat.fi/database/StatFin/StatFin_rap_csv.csv) [XML](http://pxweb2.stat.fi/database/StatFin/StatFin_rap_xml.csv)  
+ * Eurostat [PCAxis](http://pxweb2.stat.fi/Database/Eurostat/databasetree_fi.asp) [CSV](http://pxweb2.stat.fi/database/StatFin/StatFin_rap.csv)  
+ * International statistics [PC Axis](http://pxweb2.stat.fi/Database/Kansainvalisen_tiedon_tietokanta/databasetree_fi.asp)
+
+
 ## Installation
 
-Release version for general users:
+Release version for general use:
 
 
 ```r
@@ -28,7 +38,7 @@ library(statfi)
 ```
 
 
-Development version for developers:
+Development version (potentially unstable):
 
 
 ```r
@@ -39,22 +49,8 @@ library(statfi)
 ```
 
 
-For further installation and development instructions, see the [home
-page](http://ropengov.github.com/statfi).
 
-
-## Listing of available data sets (Statistics Finland, Eurostat, International)
-
-The listings of [open data sets from Statistics Finland (StatFi),
-Eurostat and International
-statistics](http://www.stat.fi/org/lainsaadanto/avoin_data.html) are
-available for browsing in PCAxis, CSV and XML format:
-
- * StatFi [PCAxis](http://pxweb2.stat.fi/database/StatFin/databasetree_fi.asp) [CSV](http://pxweb2.stat.fi/database/StatFin/StatFin_rap_csv.csv) [XML](http://pxweb2.stat.fi/database/StatFin/StatFin_rap_xml.csv)
-
- * Eurostat [PCAxis](http://pxweb2.stat.fi/Database/Eurostat/databasetree_fi.asp) [CSV](http://pxweb2.stat.fi/database/StatFin/StatFin_rap.csv)
-
- * International statistics [PC Axis](http://pxweb2.stat.fi/Database/Kansainvalisen_tiedon_tietokanta/databasetree_fi.asp)
+### Browsing the data
 
 You can download these listings in R as follows:
 
@@ -63,11 +59,30 @@ You can download these listings in R as follows:
 # Load the library
 library(statfi)
 
-# List open data files available from Statistics Finland
+# Statistics Finland open data listing
 datasets.statfi <- list_statfi_files()
 
-# List open data files available from Eurostat
+# Eurostat open data listing
 datasets.eurostat <- list_eurostat_files()
+
+# International statistics open data listing Listing not available for R
+# (but the data sets are!); browse manually at:
+# http://pxweb2.stat.fi/Database/Kansainvalisen_tiedon_tietokanta/databasetree_fi.asp
+
+# Descriptions of the first entries
+head(datasets.statfi$DESCRIPTION)
+```
+
+```
+## [1] "Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012"                                 
+## [2] "Asuntokunnat ja asuntoväestö asuntokunnan koon, huoneluvun ja talotyypin mukaan 2005-2012"
+## [3] "Asuntokunnat ja asuntoväestö asumisväljyyden mukaan 1989-2012"                            
+## [4] "Asuntokunnat koon, vanhimman iän ja sukupuolen sekä talotyypin mukaan 2005-2012"          
+## [5] "Asuntokunnat ja asuntoväestö asuntokunnan koon ja hallintaperusteen mukaan 2005-2012"     
+## [6] "Asunnot (lkm) talotyypin, käytössäolon ja rakennusvuoden mukaan 31.12.2012"
+```
+
+```r
 
 # Investigate the first entry in StatFi data
 print(datasets.statfi[1, ])
@@ -86,33 +101,18 @@ print(datasets.statfi[1, ])
 ## 1 Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012
 ```
 
-```r
-
-# Descriptions of the first entries
-head(datasets.statfi$DESCRIPTION)
-```
-
-```
-## [1] "Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012"                                 
-## [2] "Asuntokunnat ja asuntoväestö asuntokunnan koon, huoneluvun ja talotyypin mukaan 2005-2012"
-## [3] "Asuntokunnat ja asuntoväestö asumisväljyyden mukaan 1989-2012"                            
-## [4] "Asuntokunnat koon, vanhimman iän ja sukupuolen sekä talotyypin mukaan 2005-2012"          
-## [5] "Asuntokunnat ja asuntoväestö asuntokunnan koon ja hallintaperusteen mukaan 2005-2012"     
-## [6] "Asunnot (lkm) talotyypin, käytössäolon ja rakennusvuoden mukaan 31.12.2012"
-```
-
 
 ## Retrieving the data
 
-This example illustrates how to retrieve data from the StatFi
-databases by defining the URL of the data set. For the listing of
-available files and URLs, see above.
+Retrieve data from Statfi by defining URL of the data set. For the
+listing of available data sets and their corresponding URLs, see
+above.
 
 
 ```r
 library(statfi)
 
-# Define URL (see list_statfi_files() for listing of available files)
+# Define URL (see list_statfi_files() and list_eurostat_files())
 url <- "http://pxweb2.stat.fi/Database/StatFin/tul/tvt/2009/120_tvt_2009_2011-02-18_tau_112_fi.px"
 
 # Get the data
@@ -128,32 +128,26 @@ df[1:3, ]
 ```
 
 
-For further usage examples, see
-[Louhos-blog](http://louhos.wordpress.com) and
-[Datawiki](https://github.com/ropengov/statfi/wiki/Data).
-
 
 ## Licensing and Citations
 
 ### Statistics Finland data
 
-Cite Statfi and link to
+Regarding the data, kindly cite Statfi with a link to
 [http://www.statfi.fi](http://www.statfi.fi/). We are grateful to
-Statistics Finland open data personnell for their generous support
-during the development of this package.
+Statistics Finland open data personnell for their support during the R
+package development.
 
 ### statfi R package
 
 This work can be freely used, modified and distributed under the
 [Two-clause FreeBSD
 license](http://en.wikipedia.org/wiki/BSD\_licenses). Kindly cite the
-R package as 'Leo Lahti, Juuso Parkkinen ja Joona Lehtomäki
-(2010-2013). statfi R package. URL:
-http://ropengov.github.io/statfi'.
+R package as 'Leo Lahti, Juuso Parkkinen ja Joona Lehtomäki (C)
+2010-2014. statfi R package. URL: http://ropengov.github.io/statfi'.
 
 
 ### Session info
-
 
 This vignette was created with
 
@@ -178,7 +172,7 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] statfi_0.9.01 pxR_0.29      stringr_0.6.2 knitr_1.5    
+## [1] statfi_0.9.02 pxR_0.29      stringr_0.6.2 knitr_1.5    
 ## 
 ## loaded via a namespace (and not attached):
 ## [1] evaluate_0.5.1 formatR_0.10   tools_3.0.2
