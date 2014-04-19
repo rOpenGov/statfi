@@ -1,3 +1,5 @@
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/d1e28e966fd1ba6169a627f7344e25db "githalytics.com")](http://githalytics.com/rOpenGov/statfi)
+
 statfi
 ======
 
