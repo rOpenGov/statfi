@@ -23,7 +23,7 @@
 #' @references
 #' See citation("statfi") 
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
-#' @examples # df <- list_statfi_files()
+#' @examples df <- list_statfi_files()
 #' @keywords utilities
 
 list_statfi_files <- function (format = "px") {
@@ -110,7 +110,7 @@ list_eurostat_files <- function (...) {
 #' See citation("statfi") 
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
 #' @examples 
-#' # px <- get_statfi("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")
+#' \\dontrun{px <- get_statfi("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")}
 #' @keywords utilities
 
 get_statfi <- function (url, format = "px", verbose = TRUE) {

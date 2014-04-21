@@ -10,7 +10,8 @@
 #' @references
 #' See citation("statfi") 
 #' @author Contact: Leo Lahti \email{louhos@@googlegroups.com}
-#' @examples # 
+#' @export
+#' @examples \\dontrun{px <- read_px("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")}
 #' @keywords utilities
 
 read_px <- function(filename, encoding = "latin1", 
