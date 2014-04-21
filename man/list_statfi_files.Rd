@@ -17,7 +17,7 @@ table
 Arguments:
 }
 \examples{
-# df <- list_statfi_files()
+df <- list_statfi_files()
 }
 \author{
 Leo Lahti \email{louhos@googlegroups.com}

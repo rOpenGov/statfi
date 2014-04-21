@@ -109,8 +109,7 @@ list_eurostat_files <- function (...) {
 #' @references
 #' See citation("statfi") 
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
-#' @examples 
-#' \\dontrun{px <- get_statfi("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")}
+#' @examples \dontrun{px <- get_statfi("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")}
 #' @keywords utilities
 
 get_statfi <- function (url, format = "px", verbose = TRUE) {

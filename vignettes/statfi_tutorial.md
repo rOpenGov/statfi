@@ -175,7 +175,7 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] knitr_1.5      statfi_0.9.04  pxR_0.29       stringr_0.6.2 
+## [1] knitr_1.5      statfi_0.9.05  pxR_0.29       stringr_0.6.2 
 ## [5] roxygen2_3.1.0 devtools_1.4.1
 ## 
 ## loaded via a namespace (and not attached):

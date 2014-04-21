@@ -19,7 +19,7 @@ px object
 Fixed version of read.px from pxR package
 }
 \examples{
-#
+\dontrun{px <- read_px("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")}
 }
 \author{
 Contact: Leo Lahti \email{louhos@googlegroups.com}

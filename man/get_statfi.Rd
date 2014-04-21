@@ -25,7 +25,7 @@ Arguments:
 If the reading of PX file fails, CSV is used instead.
 }
 \examples{
-# px <- get_statfi("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")
+\dontrun{px <- get_statfi("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")}
 }
 \author{
 Leo Lahti \email{louhos@googlegroups.com}
