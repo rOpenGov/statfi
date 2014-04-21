@@ -1,5 +1,3 @@
-# This file is a part of rOpenGov (http://ropengov.github.com/statfi)
-
 # Copyright (C) 2010-2014 Leo Lahti, Juuso Parkkinen and Joona Lehtomaki 
 # <ropengov.github.com>. All rights reserved.
 
@@ -19,6 +17,6 @@
   # Sys.setlocale(locale = "UTF-8")
   # Sys.setlocale(locale = "WINDOWS-1252")
 
-  packageStartupMessage("Statistics Finland R tools. Copyright (C) 2010-2014 Leo Lahti, Juuso Parkkinen and Joona Lehtomaki. This is free software. You are free to use, modify and redistribute it under the FreeBSD license.")
+  packageStartupMessage("Statistics Finland R tools. Copyright (C) 2010-2014 Leo Lahti, Juuso Parkkinen and Joona Lehtomaki. This is free software from the rOpenGov project http://ropengov.github.io")
 
 }

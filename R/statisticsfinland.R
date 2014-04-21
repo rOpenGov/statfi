@@ -1,5 +1,3 @@
-# This file is a part of rOpenGov (http://ropengov.github.com/)
-
 # Copyright (C) 2010-2014 Leo Lahti, Juuso Parkkinen, Joona Lehtomaki 
 # <ropengov.github.com>. All rights reserved.
 
