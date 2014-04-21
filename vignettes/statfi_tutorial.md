@@ -131,8 +131,7 @@ df[1:3, ]
 
 ### Citing the Data
 
-Regarding the data, kindly cite Statfi with a link to
-[http://www.statfi.fi](http://www.statfi.fi/) and/or
+Regarding the data, kindly cite [Statfi](http://www.statfi.fi/) and/or
 [Eurostat](http://epp.eurostat.ec.europa.eu/portal/page/portal/statistics/search_database)
 accordingly. We are grateful to Statistics Finland open data
 personnell for their support during the R package development.
@@ -171,7 +170,7 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] knitr_1.5      statfi_0.9.02  pxR_0.29       stringr_0.6.2 
+## [1] knitr_1.5      statfi_0.9.03  pxR_0.29       stringr_0.6.2 
 ## [5] roxygen2_3.1.0 devtools_1.4.1
 ## 
 ## loaded via a namespace (and not attached):
