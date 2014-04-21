@@ -159,8 +159,6 @@ get_statfi <- function (url, format = "px", verbose = TRUE) {
     df[[nam]] <- as.numeric(as.character(df[[nam]]))
   }    
 
-  if (verbose) message("StatFi data OK.")
-
   df
 
 }

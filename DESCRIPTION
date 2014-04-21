@@ -1,7 +1,7 @@
 Package: statfi
 Type: Package
 Title: statfi R tools
-Version: 0.9.03
+Version: 0.9.04
 Date: 2013-04-21
 Author: Leo Lahti, Juuso Parkkinen, Joona Lehtomaki
 Maintainer: Leo Lahti <louhos@googlegroups.com>
