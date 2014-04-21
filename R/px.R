@@ -1,4 +1,4 @@
-#' read.px
+#' read_px
 #'
 #' Fixed version of read.px from pxR package
 #' 
@@ -13,7 +13,7 @@
 #' @examples # 
 #' @keywords utilities
 
-read.px <- function(filename, encoding = "latin1", 
+read_px <- function(filename, encoding = "latin1", 
                     na.strings = c('"."', '".."', '"..."', '"...."')) {
 
 

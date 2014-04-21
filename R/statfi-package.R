@@ -19,7 +19,7 @@
 #' @author Leo Lahti, Juuso Parkkinen and Joona Lehtomaki \email{louhos@@googlegroups.com}
 #' @references
 #' See citation("statfi")
-#' \url{http://ropengov.github.com/statfi}
+#' \url{http://github.com/ropengov/statfi}
 #' @examples library(statfi)
 #' @keywords package
 NULL

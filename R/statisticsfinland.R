@@ -121,9 +121,9 @@ get_statfi <- function (url, format = "px", verbose = TRUE) {
     url <- gsub("\\.xml", "\\.px", url)
 
     # If URL is given, read the data into PX object
-    if (is.url(url)) {
+    if (is_url(url)) {
       message(paste("Reading StatFi data from ", url))
-      px <- read.px(url)
+      px <- read_px(url)
     }
 
     # Convert to data.frame 

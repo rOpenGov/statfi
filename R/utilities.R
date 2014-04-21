@@ -12,7 +12,7 @@
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
 #' @examples # is.url("http://aa.px")
 #' @keywords utilities
-is.url <- function (s) {
+is_url <- function (s) {
   (class(s) == "character" && substr(s,1,7) == "http://")
 }
 
