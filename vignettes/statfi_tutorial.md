@@ -88,7 +88,7 @@ print(datasets.statfi[1, ])
 ##                                                                  File
 ## 1 http://pxweb2.stat.fi/database/StatFin/asu/asas/010_asas_tau_101.px
 ##      size          created          updated variables
-## 1 1230502 2012-02-13 12:27 2014-04-02 16:58         4
+## 1 1230502 2012-02-13 12:27 2013-05-22 08:10         4
 ##                  tablesize     type LANGUAGE
 ## 1 (321x8x5) x 28 = 359520  Maksuton       fi
 ##                                                                  TITLE
@@ -176,11 +176,11 @@ sessionInfo()
 ## 
 ## other attached packages:
 ## [1] knitr_1.5      statfi_0.9.06  pxR_0.29       stringr_0.6.2 
-## [5] roxygen2_3.1.0 devtools_1.4.1
+## [5] roxygen2_3.0.0 devtools_1.4.1
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] brew_1.0-6      codetools_0.2-8 digest_0.6.4    evaluate_0.5.1 
 ##  [5] formatR_0.10    httr_0.2        memoise_0.1     parallel_3.0.2 
-##  [9] Rcpp_0.11.0     RCurl_1.95-4.1  tools_3.0.2     whisker_0.3-3
+##  [9] RCurl_1.95-4.1  tools_3.0.2     whisker_0.3-3
 ```
 
