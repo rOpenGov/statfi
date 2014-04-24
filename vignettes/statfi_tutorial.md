@@ -88,7 +88,7 @@ print(datasets.statfi[1, ])
 ##                                                                  File
 ## 1 http://pxweb2.stat.fi/database/StatFin/asu/asas/010_asas_tau_101.px
 ##      size          created          updated variables
-## 1 1230502 2012-02-13 12:27 2013-05-22 08:10         4
+## 1 1230502 2012-02-13 12:27 2014-04-02 16:58         4
 ##                  tablesize     type LANGUAGE
 ## 1 (321x8x5) x 28 = 359520  Maksuton       fi
 ##                                                                  TITLE
@@ -175,7 +175,7 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] knitr_1.5      statfi_0.9.06  pxR_0.29       stringr_0.6.2 
+## [1] knitr_1.5      statfi_0.9.7   pxR_0.29       stringr_0.6.2 
 ## [5] roxygen2_3.0.0 devtools_1.4.1
 ## 
 ## loaded via a namespace (and not attached):
