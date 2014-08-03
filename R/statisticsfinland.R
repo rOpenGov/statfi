@@ -33,8 +33,10 @@ list_statfi_files <- function (format = "px") {
   }
 
   message(paste("Downloading", url))
+  d <- try(read.csv(url, sep = ";", encoding = "latin1"))
+  if (length(grep("^Error", d)) == 1) {warning(paste("No files available at", url)); return(character(0))}
 
-  tab <- apply(read.csv(url, sep = ";", encoding = "latin1"), 2, function (x) {iconv(x, from = "latin1", to = "utf-8")})
+  tab <- apply(d, 2, function (x) {iconv(x, from = "latin1", to = "utf-8")})
   tab <- as.data.frame(tab)
 
   tab$File <- as.character(tab$File)
@@ -70,8 +72,10 @@ list_eurostat_files <- function (...) {
   url <- "http://pxweb2.stat.fi/database/StatFin/StatFin_rap.csv"
 
   message(paste("Downloading", url))
+  d <- try(read.csv(url, sep = ";", encoding = "latin1"))
+  if (length(grep("^Error", d)) == 1) {warning(paste("No files available at", url)); return(character(0))}
 
-  tab <- apply(read.csv(url, sep = ";", encoding = "latin1"), 2, function (x) {iconv(x, from = "latin1", to = "utf-8")})
+  tab <- apply(d, 2, function (x) {iconv(x, from = "latin1", to = "utf-8")})
   tab <- as.data.frame(tab)
 
   tab$File <- as.character(tab$File)
