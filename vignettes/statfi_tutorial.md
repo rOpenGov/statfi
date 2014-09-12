@@ -25,7 +25,6 @@ install.packages("statfi")
 library(statfi)
 ```
 
-
 Development version (potentially unstable):
 
 
@@ -35,7 +34,6 @@ library(devtools)
 install_github("statfi", "ropengov")
 library(statfi)
 ```
-
 
 
 ## Available data sets
@@ -70,33 +68,31 @@ head(datasets.statfi$DESCRIPTION)
 ```
 
 ```
-## [1] "Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012"                                 
-## [2] "Asuntokunnat ja asuntoväestö asuntokunnan koon, huoneluvun ja talotyypin mukaan 2005-2012"
-## [3] "Asuntokunnat ja asuntoväestö asumisväljyyden mukaan 1989-2012"                            
-## [4] "Asuntokunnat koon, vanhimman iän ja sukupuolen sekä talotyypin mukaan 2005-2012"          
+## [1] "Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2013"                                 
+## [2] "Asuntokunnat ja asuntoväestö asuntokunnan koon, huoneluvun ja talotyypin mukaan 2005-2013"
+## [3] "Asuntokunnat ja asuntoväestö asumisväljyyden mukaan 1989-2013"                            
+## [4] "Asuntokunnat koon, vanhimman iän ja sukupuolen sekä talotyypin mukaan 2005-2013"          
 ## [5] "Asuntokunnat ja asuntoväestö asuntokunnan koon ja hallintaperusteen mukaan 2005-2012"     
-## [6] "Asunnot (lkm) talotyypin, käytössäolon ja rakennusvuoden mukaan 31.12.2012"
+## [6] "Asunnot (lkm) talotyypin, käytössäolon ja rakennusvuoden mukaan 31.12.2013"
 ```
 
 ```r
-
 # Investigate the first entry in StatFi data
-print(datasets.statfi[1, ])
+print(datasets.statfi[1,])
 ```
 
 ```
 ##                                                                  File
 ## 1 http://pxweb2.stat.fi/database/StatFin/asu/asas/010_asas_tau_101.px
 ##      size          created          updated variables
-## 1 1230502 2012-02-13 12:27 2014-04-02 16:58         4
+## 1 1271762 2012-02-13 12:27 2014-05-21 07:30         4
 ##                  tablesize     type LANGUAGE
-## 1 (321x8x5) x 28 = 359520  Maksuton       fi
+## 1 (321x8x5) x 29 = 372360  Maksuton       fi
 ##                                                                  TITLE
 ## 1 Asuntokunnat muuttujina Alue, Asuntokunnan koko, Talotyyppi ja Vuosi
 ##                                                DESCRIPTION
-## 1 Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2012
+## 1 Asuntokunnat koon ja asunnon talotyypin mukaan 1985-2013
 ```
-
 
 This provides the list of statfi data sets. For other international
 open statistics available via Statfi, [browse the data sets
@@ -121,16 +117,12 @@ url <- "http://pxweb2.stat.fi/Database/StatFin/tul/tvt/2009/120_tvt_2009_2011-02
 
 # Download the data
 df <- get_statfi(url)
-df[1:3, ]
+df[1:3,]
 ```
 
 ```
-##                           Tiedot    Kunta Vuosi     dat
-## 1                    Tulonsaajia Koko maa  2005 4314900
-## 2 Veronalaiset tulot keskimäärin Koko maa  2005   21695
-## 3   Veronalaiset tulot, mediaani Koko maa  2005   17793
+## Error: incorrect number of dimensions
 ```
-
 
 
 ## Licensing and Citations
@@ -175,12 +167,11 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] knitr_1.5      statfi_0.9.7   pxR_0.29       stringr_0.6.2 
-## [5] roxygen2_3.0.0 devtools_1.4.1
+## [1] knitr_1.6       statfi_0.9.8    pxR_0.40.0      plyr_1.8.1     
+## [5] RJSONIO_1.2-0.2 reshape2_1.4    stringr_0.6.2   devtools_1.5   
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] brew_1.0-6      codetools_0.2-8 digest_0.6.4    evaluate_0.5.1 
-##  [5] formatR_0.10    httr_0.2        memoise_0.1     parallel_3.0.2 
-##  [9] RCurl_1.95-4.1  tools_3.0.2     whisker_0.3-3
+##  [1] digest_0.6.4   evaluate_0.5.5 formatR_0.10   httr_0.3      
+##  [5] memoise_0.2.1  parallel_3.0.2 Rcpp_0.11.2    RCurl_1.95-4.1
+##  [9] roxygen2_4.0.1 tools_3.0.2    whisker_0.4
 ```
-
