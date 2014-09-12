@@ -121,7 +121,10 @@ df[1:3,]
 ```
 
 ```
-## Error: incorrect number of dimensions
+##                           Tiedot    Kunta Vuosi     dat
+## 1                    Tulonsaajia Koko maa  2005 4314900
+## 2 Veronalaiset tulot keskimäärin Koko maa  2005   21695
+## 3   Veronalaiset tulot, mediaani Koko maa  2005   17793
 ```
 
 
@@ -152,7 +155,7 @@ sessionInfo()
 ```
 
 ```
-## R version 3.0.2 (2013-09-25)
+## R version 3.1.1 (2014-07-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## 
 ## locale:
@@ -167,11 +170,11 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] knitr_1.6       statfi_0.9.8    pxR_0.40.0      plyr_1.8.1     
-## [5] RJSONIO_1.2-0.2 reshape2_1.4    stringr_0.6.2   devtools_1.5   
+## [1] knitr_1.6     statfi_0.9.82 pxR_0.40.0    plyr_1.8.1    RJSONIO_1.3-0
+## [6] reshape2_1.4  stringr_0.6.2 devtools_1.5 
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] digest_0.6.4   evaluate_0.5.5 formatR_0.10   httr_0.3      
-##  [5] memoise_0.2.1  parallel_3.0.2 Rcpp_0.11.2    RCurl_1.95-4.1
-##  [9] roxygen2_4.0.1 tools_3.0.2    whisker_0.4
+##  [1] digest_0.6.4   evaluate_0.5.5 formatR_0.10   httr_0.4      
+##  [5] memoise_0.2.1  parallel_3.1.1 Rcpp_0.11.2    RCurl_1.95-4.3
+##  [9] roxygen2_4.0.1 tools_3.1.1    whisker_0.4
 ```

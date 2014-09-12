@@ -15,9 +15,16 @@
 #' @examples \dontrun{px <- read_px("http://pxweb2.stat.fi/database/StatFin/vrm/synt/080_synt_tau_203.px")}
 #' @keywords utilities
 
-read_px <- function(filename, encoding = "latin1", 
-                    na.strings = c('"."', '".."', '"..."', '"...."')) {
+read_px <- function(filename, encoding = "latin1", na.strings = c('"."', '".."', '"..."', '"...."')) {
+  as.data.frame(read.px(filename))
+}
 
+
+
+
+
+read_px2 <- function(filename, encoding = "latin1", 
+                    na.strings = c('"."', '".."', '"..."', '"...."')) {
 
   label <- NULL
   attribute <- NULL
