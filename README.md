@@ -31,6 +31,3 @@ This R package is part of the [rOpenGov](http://ropengov.github.io) project.
   * join IRC at !louhos@IRCnet (Finland) and ropengov@Freenode (international)
   * follow us in social media: [Louhos (Finland)](http://louhos.github.com/contact.html); [rOpenGov (international)](http://ropengov.github.io/contribute/)
 
-  
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/d1e28e966fd1ba6169a627f7344e25db "githalytics.com")](http://githalytics.com/rOpenGov/statfi)
-
