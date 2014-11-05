@@ -1,8 +1,8 @@
 Package: statfi
 Type: Package
 Title: statfi R tools
-Version: 0.9.82
-Date: 2014-09-12
+Version: 0.9.83
+Date: 2014-11-06
 Author: Leo Lahti, Juuso Parkkinen, Joona Lehtomaki
 Maintainer: Leo Lahti <louhos@googlegroups.com>
 Description: Statistics Finland (Tilastokeskus) Open Data R Tools

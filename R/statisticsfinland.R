@@ -9,6 +9,61 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of 
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+
+
+#' Get information of Finnish municipalities from Statistics Finland 2013 
+#  (C) Tilastokeskus 2013 http://www.stat.fi/tup/atilastotietokannat/index.html
+#' 
+#' @param verbose verbose 
+#' @param ... Arguments to be passed
+
+#' @return A data frame with municipality data
+#' @export 
+#' @importFrom pxR read.px
+#'
+#' @references
+#' See citation("statfo") 
+#' @author Leo Lahti \email{louhos@@googlegroups.com}
+#' @examples \dontrun{df <- get_municipality_info_statfi()}
+#' @keywords utilities
+
+get_municipality_info_statfi <- function (verbose = TRUE, ...) {
+
+  url <- "http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px"
+  message(paste("Downloading data from", url))
+
+  # FIXME: merge GetPopulationRegister function in here
+
+  # Get municipality information from Tilastokeskus
+  px <- read.px(url)
+  
+  df <- as.data.frame(px) 
+  # read.csv(url, encoding = "latin1", as.is = T, colClasses = 'character', sep = ";"); 
+
+  if (verbose) { message("Cleaning up municipality names") }
+  # FIXME: scandinavic characters cause error in Windows systems, find solution
+  df$Alue <- sapply(strsplit(as.character(df[[grep("Alueluokitus", names(df))]]), " - "), function (x) {x[[1]]})
+
+  if (verbose) {message("Converting to wide format")}
+  df <- cast(df[, c("Alue", "Tunnusluku", "value")], Alue ~ Tunnusluku) 
+
+  df[, "Alue"] <- convert_municipality_names(df[, "Alue"])
+
+  df$Alue <- factor(df$Alue)
+  df$Kunta <- factor(df$Alue)
+  rownames(df) <- as.character(df[["Alue"]])
+
+  # FIXME at higher level: Kunta is factor but Maakunta is character and 
+  # UTF-8 does not seem to be working with Maakunta field
+  rownames(df) <- df$Kunta
+
+  # Order municipalities alphabetically
+  df <- df[sort(rownames(df)), ]
+
+  df
+
+}
+
 #' List the open data files available from Statistics Finland
 #' 
 #' Arguments:
