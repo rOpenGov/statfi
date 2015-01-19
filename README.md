@@ -21,6 +21,8 @@ page](https://github.com/rOpenGov/statfi/blob/master/vignettes/statfi_tutorial.m
 
 This R package is part of the [rOpenGov](http://ropengov.github.io) project.
 
+[Geospatial data of Statistics Finland](http://www.stat.fi/tup/rajapintapalvelut/index_en.html) is available via the [gisfin](https://github.com/ropengov/gisfin/) package.
+
 ### Contact
   
   You are welcome to:
