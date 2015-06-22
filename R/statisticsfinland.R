@@ -1,16 +1,3 @@
-# Copyright (C) 2010-2014 Leo Lahti, Juuso Parkkinen, Joona Lehtomaki 
-# <ropengov.github.com>. All rights reserved.
-
-# This program is open source software; you can redistribute it and/or modify 
-# it under the terms of the FreeBSD License (keep this notice): 
-# http://en.wikipedia.org/wiki/BSD_licenses
-
-# This program is distributed in the hope that it will be useful, 
-# but WITHOUT ANY WARRANTY; without even the implied warranty of 
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-
 #' Get information of Finnish municipalities from Statistics Finland 2013 
 #  (C) Tilastokeskus 2013 http://www.stat.fi/tup/atilastotietokannat/index.html
 #' 
@@ -20,6 +7,8 @@
 #' @return A data frame with municipality data
 #' @export 
 #' @importFrom pxR read.px
+#' @importFrom reshape cast
+#' @importFrom sorvi convert_municipality_names
 #'
 #' @references
 #' See citation("statfo") 

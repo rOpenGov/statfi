@@ -9,11 +9,12 @@ Statistics Finland (Tilastokeskus) R tools
 This R package provides tools to access open data from [Statistics
 Finland](http://www.stat.fi/tup/tilastotietokannat/index_fi.html),
 including about 3000 data sets from [Statistics
-Finland](http://www.stat.fi/org/lainsaadanto/avoin_data.html). 
+Finland](http://www.stat.fi/org/lainsaadanto/avoin_data.html). Part of
+[rOpenGov](http://ropengov.github.io).
 
-This R package is part of the [rOpenGov](http://ropengov.github.io)
-project.
+[Geospatial data of Statistics Finland](http://www.stat.fi/tup/rajapintapalvelut/index_en.html) is available via the [gisfin](https://github.com/ropengov/gisfin/) package.
 
+Tools for the new [PX-Web API] of Statistics Finland are available via the [pxweb](https://github.com/ropengov/pxweb/) package.
 
 ## Installation
 
@@ -91,6 +92,7 @@ url <- "http://pxweb2.stat.fi/Database/StatFin/tul/tvt/2009/120_tvt_2009_2011-02
 df <- get_statfi(url)
 df[1:3,]
 ```
+
 
 ### <a name="statfi"></a>Statistics Finland (municipality information)
 

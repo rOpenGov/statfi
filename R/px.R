@@ -38,7 +38,7 @@ read_px2 <- function(filename, encoding = "latin1",
     }
 
     clean.spaces <- function(x){
-        gsub("^[[:space:]]+|[[:space:]]+$", "", x) # elimina blancos por delante|detrás
+        gsub("^[[:space:]]+|[[:space:]]+$", "", x) # elimina blancos 
     }
 
     get.attributes <- function(x){
